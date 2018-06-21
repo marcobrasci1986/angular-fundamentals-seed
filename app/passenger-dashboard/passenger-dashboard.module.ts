@@ -3,6 +3,8 @@ import { CommonModule } from "@angular/common";
 import { PassengerDashboardComponent } from "./containers/passenger-dashboard/passenger-dashboard.component";
 import { PassengerDetailComponent } from "./components/passenger-detail/passenger-detail.component";
 import { PassengerCountComponent } from "./components/passenger-count/passenger-count.component";
+import { PassengerService } from "./passenger.service";
+import { HttpModule } from "@angular/http";
 
 /**
  * Declarations: declare components from this feature module
@@ -15,7 +17,8 @@ import { PassengerCountComponent } from "./components/passenger-count/passenger-
     PassengerDetailComponent,
     PassengerCountComponent
   ],
-  imports: [CommonModule],
+  providers: [PassengerService],
+  imports: [CommonModule, HttpModule],
   exports: [PassengerDashboardComponent]
 })
 export class PassengerDashboardModule {}
