@@ -5,6 +5,9 @@ import { PassengerDetailComponent } from "./components/passenger-detail/passenge
 import { PassengerCountComponent } from "./components/passenger-count/passenger-count.component";
 import { PassengerService } from "./passenger.service";
 import { HttpModule } from "@angular/http";
+import { PassengerViewerComponent } from "./containers/passenger-viewer/passenger-viewer.component";
+import { PassengerFormComponent } from "./components/passenger-form/passenger-form.component";
+import { FormsModule } from "@angular/forms";
 
 /**
  * Declarations: declare components from this feature module
@@ -14,11 +17,13 @@ import { HttpModule } from "@angular/http";
 @NgModule({
   declarations: [
     PassengerDashboardComponent,
+    PassengerViewerComponent,
     PassengerDetailComponent,
-    PassengerCountComponent
+    PassengerCountComponent,
+    PassengerFormComponent
   ],
   providers: [PassengerService],
-  imports: [CommonModule, HttpModule],
-  exports: [PassengerDashboardComponent]
+  imports: [CommonModule, HttpModule, FormsModule],
+  exports: [PassengerViewerComponent]
 })
 export class PassengerDashboardModule {}

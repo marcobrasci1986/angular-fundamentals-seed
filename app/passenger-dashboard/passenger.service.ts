@@ -20,7 +20,7 @@ export class PassengerService {
 
   updatePassengers(passenger: Passenger): Observable<Passenger> {
     let headers = new Headers({
-      "Content-Type": "appplication/json"
+      "Content-Type": "application/json"
     });
     let options = new RequestOptions({
       headers: headers
@@ -34,6 +34,13 @@ export class PassengerService {
   removePassenger(passenger: Passenger): Observable<Passenger> {
     return this.http
       .delete(`${PASSENGER_API}/${passenger.id}`)
+      .map((response: Response) => response.json())
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
+  getPassenger(id: number): Observable<Passenger> {
+    return this.http
+      .get(`${PASSENGER_API}/${id}`)
       .map((response: Response) => response.json())
       .catch((error: any) => Observable.throw(error.json()));
   }
