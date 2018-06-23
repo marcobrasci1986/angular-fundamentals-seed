@@ -25,6 +25,7 @@ npm-debug.log
 
 # Cache
 .awcache
+package-lock.json
 
 # Build Generated
 vendor/vendor.js
